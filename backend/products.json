@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Iphone X",
+        "description": "A premium smartphone featuring a sleek design, edge-to-edge display, advanced Face ID technology, powerful performance, and an impressive camera for capturing stunning photos and videos.",
+        "price": 49999,
+        "image": "./images/iphonex.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Realme 105G",
+        "description": "A feature-packed 5G smartphone with a powerful processor, high-refresh-rate display, versatile quad-camera system, and long-lasting battery, delivering fast and immersive mobile experiences.",
+        "price": 18999,
+        "image": "./images/realme.jpg"
+    },
+    {
+        "id": 3,
+        "name": "POCO F5",
+        "description": "A flagship-grade smartphone offering exceptional performance, stunning AMOLED display, versatile camera system, long-lasting battery, and 5G connectivity for a premium mobile experience.",
+        "price": 20999,
+        "image": "./images/poco.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Boat Headphone X",
+        "description": " Stylish and comfortable wireless headphones with immersive sound quality, long battery life, convenient controls, and a sleek design for an enjoyable and hassle-free audio experience.",
+        "price": 3999,
+        "image": "./images/boat.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Apple AirPods Pro",
+        "description": "Wireless earbuds with active noise cancellation, immersive sound, and a customizable fit.",
+        "price": 24900,
+        "image": "./images/airpod.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Samsung Galaxy Watch 4",
+        "description": "Smartwatch with advanced health tracking, stylish design, and long battery life.",
+        "price": 12549,
+        "image": "./images/samsung.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Sony WH-1000XM4",
+        "description": "Premium over-ear headphones with industry-leading noise cancellation and high-resolution audio.",
+        "price": 27999,
+        "image": "./images/sony.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Canon EOS M50 Mark II",
+        "description": "Mirrorless camera with 4K video recording, 24.1MP sensor, and versatile autofocus capabilities.",
+        "price": 69699,
+        "image": "./images/cannon.jpg"
+    },
+    {
+        "id": 9,
+        "name": "HP 14s Ryzen5",
+        "description": " sleek and portable laptop with a 14-inch display, powerful performance, long battery life, and modern features for productivity on the go.",
+        "price": 55999,
+        "image": "./images/hp.jpg"
+    }
+]
