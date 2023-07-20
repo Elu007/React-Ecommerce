@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <Nav>
       <NavLogo to="/">React ECom</NavLogo>
-      Here we need a search option
+      Here we need to add a search option
       <NavMenu>
         <NavItem>
           <NavLink to="/">Home</NavLink>

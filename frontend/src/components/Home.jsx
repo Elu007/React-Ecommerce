@@ -1,34 +1,38 @@
 import React from 'react'
 import axios from 'axios'
+import styled from 'styled-components';
 import { useState, useEffect } from 'react'
+import ProductCard from './ProductCard'
+
+const StyledHeading = styled.h1`
+  text-align: center;
+`;
 
 const Home = () => {
-    const [products, setProducts] = useState();
+  const [products, setProducts] = useState();
 
-    useEffect(() =>{
-      axios.get('/api/products/:id').then(
-        response => {
-          setProducts(response.data);
-        }
-      ).catch(error => {
-        console.error(error);
-      })
-    },[])
+  useEffect(() => {
+    axios.get('/api/products/:id').then(
+      response => {
+        setProducts(response.data);
+      }
+    ).catch(error => {
+      console.error(error);
+    })
+  }, [])
 
-    return (
-        <>
-            <div className='products'>
-                {products?.map((products) => {
-                    return (
-                        <div key={products.id}>
-                            <img className='img' src={products.image} alt="img" />
-                            <h1>{products.name}</h1>
-                        </div>
-                    );
-                })}
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div>
+        <StyledHeading>Products</StyledHeading>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {products?.map((product) => (
+            <ProductCard key={product.id} product={product}/>
+          ))}
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default Home
