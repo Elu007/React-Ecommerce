@@ -1,6 +1,7 @@
 // ProductCard.js
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
 const CardContainer = styled.div`
   background-color: #ffffff;
@@ -36,12 +37,31 @@ const ProductPrice = styled.p`
   margin: 0;
 `;
 
+const StyledButton = styled(Link)`
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+
 const ProductCard = ({ product }) => {
   return (
     <CardContainer>
       <ProductImage src={product.image} alt={product.image} />
       <ProductTitle>{product.name}</ProductTitle>
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
       <ProductPrice>₹{product.price}</ProductPrice>
+      <StyledButton to={`/api/products/${product.id}`}>More Info</StyledButton>
+      </div>
     </CardContainer>
   );
 };

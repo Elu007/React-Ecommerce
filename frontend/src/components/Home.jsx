@@ -12,7 +12,7 @@ const Home = () => {
   const [products, setProducts] = useState();
 
   useEffect(() => {
-    axios.get('/api/products/:id').then(
+    axios.get('/api/products').then(
       response => {
         setProducts(response.data);
       }
@@ -25,8 +25,9 @@ const Home = () => {
     <>
       <div>
         <StyledHeading>Products</StyledHeading>
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
           {products?.map((product) => (
+            // Passing the data to the ProductCard component by passing the product props
             <ProductCard key={product.id} product={product}/>
           ))}
         </div>
