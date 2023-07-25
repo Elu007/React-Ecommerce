@@ -11,7 +11,7 @@ app.get("/api/products", (req, res) => {
 })
 
 // API to get a single product only
-app.get('/api/products/:productId', (req, res) => {
+app.get("/api/products/:productId", (req, res) => {
     const productId = parseInt(req.params.productId);
     const product = data.find((product) => product.id === productId);
     if (product) {

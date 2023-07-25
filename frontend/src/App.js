@@ -11,9 +11,9 @@ function App() {
     <div className='App'>
       <Navbar/>
     <Routes>
-      <Route path='/' Component={Home}/>
-      <Route path='/about' Component={About}/>
-      <Route path="/api/products/:id" Component={SingleProduct} />
+      <Route path='/' element={<Home/>}/>
+      <Route path='/about' element={<About/>}/>
+      <Route path="/api/products/:productId" element={<SingleProduct/>} exact />
     </Routes>
     </div>
   );
