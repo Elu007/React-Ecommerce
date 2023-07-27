@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 
 // Styled components
@@ -37,6 +37,32 @@ const ProductPrice = styled.div`
   margin-bottom: 10px;
 `;
 
+
+const spinAnimation = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+const Loader = styled.div`
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: ${spinAnimation} 2s linear infinite;
+`;
+
 const SingleProduct = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
@@ -51,19 +77,21 @@ const SingleProduct = () => {
   };
 
   useEffect(() => {
-      // axios.get(`/api/products/${productId}`).then(
-      //   response => {
-      //     setProduct(response.data);
-      //   }
-      // ).catch(error => {
-      //   console.error(error);
-      // })
-      fetchData();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+    // axios.get(`/api/products/${productId}`).then(
+    //   response => {
+    //     setProduct(response.data);
+    //   }
+    // ).catch(error => {
+    //   console.error(error);
+    // })
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
 
   if (!product) {
-    return <div>Loading...</div>;
+    return <LoadingContainer>
+      <Loader />
+    </LoadingContainer>
   }
 
   return (
